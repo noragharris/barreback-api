@@ -31,3 +31,86 @@
 
 en:
   hello: "Hello world"
+  faker:
+    name:
+      warm_ups:
+        - Warm Up A
+        - Warm Up B
+        - Warm Up C
+      weight_works:
+        - Weight Work A
+        - Weight Work B
+        - Weight Work C
+      thighs_turnout:
+        - Low V
+        - High V
+        - Wide 2nd
+        - Extension Turnout
+        - Chair High V
+        - Waterski V
+        - Waterski Wide 2nd
+        - Wide 2nd Foldover
+        - Fourth
+        - Lying on Back
+      thighs_parallel:
+        - Parallel Hip Width
+        - Parallel Together
+        - Extension Parallel
+        - Chair Parallel Hip Width
+        - Chair Parallel Together
+        - Knock Kneed
+        - Waterski Hip Width
+        - Low Extension
+        - Reverse Chair
+        - Kneeling
+      seat_turnout:
+        - Standing Straight Leg
+        - Semi Foldover Turnout
+        - Foldover Turnout
+        - Pretzel
+        - Waterski Turnout
+        - Standing Pretzel
+        - Tabletop Turnout
+        - Fetal
+        - Flying Pretzel
+      seat_parallel:
+        - Standing Bent Leg
+        - Semi Foldover Parallel
+        - Foldover Parallel
+        - Tabletop Parallel
+        - Waterski Parallel
+        - Lunge
+        - Low Semi Foldover
+        - Semi Push-Up
+        - Kneeling
+        - Face Down
+      abs_1:
+        - Combo A
+        - Combo B
+        - Combo C
+        - At Barre
+        - Center of Room
+      abs_2:
+        - Combo A
+        - Combo B
+        - Combo C
+        - At Barre
+        - Center of Room
+      abs_3:
+        - Combo A
+        - Combo B
+        - Combo C
+        - At Barre
+        - Center of Room
+      back_extension:
+        - Combo A
+        - Combo B
+        - Combo C
+      back_dancing:
+        - Combo A
+        - Combo B
+        - Combo C
+
+
+
+
