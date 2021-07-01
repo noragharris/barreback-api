@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Barreback-API is an API to plan an accurate Pure Barre class.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## Project Info
 
-* System dependencies
+Ruby version: 2.7.2
 
-* Configuration
+Rails version: ~> 6.1.3
 
-* Database creation
+---
 
-* Database initialization
+## Set Up
 
-* How to run the test suite
+1. Install Gems
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle install
+```
 
-* Deployment instructions
+2. Install Postgres
 
-* ...
+## Start the Server
+
+```bash
+$ bundle exec rake db:create && bundle exec rake db:reset
+$ bundle exec rails s
+```
+
+## Test
+
+```
+bundle exec rspec
+```
