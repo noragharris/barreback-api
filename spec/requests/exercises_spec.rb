@@ -75,8 +75,7 @@ RSpec.describe '/exercises', type: :request do
       end
 
       it 'returns a validation failure message' do
-        expect(response.body)
-          .to match(/Validation failed: Name can't be blank/)
+        expect(response.body).to include('Validation failed')
       end
     end
   end

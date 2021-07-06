@@ -22,19 +22,9 @@
 # Name, class_type, section, location, direction, equipment, rotation, height
 
 class Exercise < ApplicationRecord
+  include Quarter
+  include ClassType
+
   validates :name, presence: true
   validates :year, numericality: { only_integer: true }
-
-  enum quarter: {
-    Q1: 1,
-    Q2: 2,
-    Q3: 3,
-    Q4: 4
-  }
-
-  enum class_type: {
-    Classic: 1,
-    Empower: 2,
-    Reform: 3
-  }
 end
