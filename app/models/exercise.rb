@@ -19,10 +19,16 @@
 # - choreography - String - full choreography of exercise
 #
 # TODO enums
-# Name, Quater, class_type, section, location, direction, equipment, rotation, height
+# Name, class_type, section, location, direction, equipment, rotation, height
 
 class Exercise < ApplicationRecord
   validates :name, presence: true
-  validates_inclusion_of :quarter, in: %w[Q1 Q2 Q3 Q4]
   validates :year, numericality: { only_integer: true }
+
+  enum quarter: {
+    Q1: 1,
+    Q2: 2,
+    Q3: 3,
+    Q4: 4
+  }
 end

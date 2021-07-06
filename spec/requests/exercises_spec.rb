@@ -57,8 +57,8 @@ RSpec.describe '/exercises', type: :request do
 
       it 'creates a exercise' do
         expect(json['name']).to eq(valid_attributes[:name])
-        expect(json['quarter']).to eq(valid_attributes[:quarter])
         expect(json['year']).to eq(valid_attributes[:year])
+        enum_validator(Exercise.quarters, valid_attributes[:quarter], json['quarter'])
       end
 
       it 'returns status code 201' do
