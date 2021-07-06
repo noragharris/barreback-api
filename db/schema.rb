@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(version: 2021_05_20_163955) do
 
   create_table "exercises", force: :cascade do |t|
     t.string "name"
+    t.string "quarter"
+    t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

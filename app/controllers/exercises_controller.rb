@@ -38,6 +38,6 @@ class ExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exercise_params
-    params.permit(:name)
+    params.permit(:name, :quarter, :year)
   end
 end

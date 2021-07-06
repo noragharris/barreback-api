@@ -50,14 +50,15 @@ RSpec.describe '/exercises', type: :request do
   end
 
   describe 'POST /exercises' do
-    let(:exercise_name) { Faker::Name.thighs_turnout }
-    let(:valid_attributes) { { name: exercise_name } }
+    let(:valid_attributes) { attributes_for(:exercise) }
 
     context 'when the request is valid' do
-      before { post '/exercises', params: valid_attributes }
+      before { post '/exercises', params: valid_attributes, as: :json }
 
       it 'creates a exercise' do
-        expect(json['name']).to eq(exercise_name)
+        expect(json['name']).to eq(valid_attributes[:name])
+        expect(json['quarter']).to eq(valid_attributes[:quarter])
+        expect(json['year']).to eq(valid_attributes[:year])
       end
 
       it 'returns status code 201' do
