@@ -6,5 +6,5 @@ RSpec.describe Exercise, type: :model do
 
   it { should validate_presence_of(:name) }
   it { should validate_numericality_of(:year) }
-  it { should define_enum_for(:class_type).with_values(Exercise.class_types) }
+  it { should define_enum_for(:rotation).with_values(Exercise.rotations) }
 end

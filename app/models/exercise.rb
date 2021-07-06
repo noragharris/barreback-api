@@ -5,7 +5,6 @@
 # - Active - Boolean - Exercise active for given quarter
 # - Quarter - String - Quarter that Exercise was created
 # - Year - Year - Year that Exercise was created
-# - createdAt
 # - classType - String - which type of Class an Exercise belongs to - Reform, Empower, Classic
 # - section - String - which section of class the exercise belongs in
 # - location - String - which location in the room the exercise is done in
@@ -19,12 +18,21 @@
 # - choreography - String - full choreography of exercise
 #
 # TODO enums
-# Name, class_type, section, location, direction, equipment, rotation, height
+# Name, section, location, direction, equipment, rotation, height
+#
+# TODO attributes
+# active, section, location, direction, equipment, height, pullOff, twoSided, setUp, choreography
 
 class Exercise < ApplicationRecord
   include Quarter
   include ClassType
 
+  enum rotation: {
+    Turnout: 1,
+    Parallel: 2
+  }
+
   validates :name, presence: true
   validates :year, numericality: { only_integer: true }
+  validates :rotation, inclusion: { in: rotations }
 end
