@@ -31,4 +31,10 @@ class Exercise < ApplicationRecord
     Q3: 3,
     Q4: 4
   }
+
+  enum class_type: {
+    Classic: 1,
+    Empower: 2,
+    Reform: 3
+  }
 end

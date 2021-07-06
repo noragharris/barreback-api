@@ -59,6 +59,7 @@ RSpec.describe '/exercises', type: :request do
         expect(json['name']).to eq(valid_attributes[:name])
         expect(json['year']).to eq(valid_attributes[:year])
         enum_validator(Exercise.quarters, valid_attributes[:quarter], json['quarter'])
+        enum_validator(Exercise.class_types, valid_attributes[:class_type], json['class_type'])
       end
 
       it 'returns status code 201' do

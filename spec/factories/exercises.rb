@@ -3,5 +3,6 @@ FactoryBot.define do
     name { Faker::Name.thighs_turnout }
     quarter { Exercise.quarters.flatten.sample }
     year { Faker::Number.between(from: 2010, to: Date.today.year) }
+    class_type { Exercise.class_types.flatten.sample }
   end
 end
