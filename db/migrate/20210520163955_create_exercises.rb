@@ -6,6 +6,7 @@ class CreateExercises < ActiveRecord::Migration[6.1]
       t.integer :year
       t.integer :class_type
       t.integer :rotation
+      t.integer :section
 
       t.timestamps
     end

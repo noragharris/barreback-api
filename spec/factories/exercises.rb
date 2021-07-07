@@ -5,5 +5,6 @@ FactoryBot.define do
     year { Faker::Number.between(from: 2010, to: Date.today.year) }
     class_type { Exercise.class_types.flatten.sample }
     rotation { Exercise.rotations.flatten.sample }
+    section { Exercise.sections.flatten.sample }
   end
 end

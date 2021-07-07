@@ -32,7 +32,20 @@ class Exercise < ApplicationRecord
     Parallel: 2
   }
 
+  enum section: {
+    "Warm Up": 10,
+    "Weight Work": 15,
+    "Thighs": 20,
+    "Seat": 30,
+    "Abs 1": 40,
+    "Abs 2": 42,
+    "Abs 3": 43,
+    "Back Extension": 50,
+    "Back Dancing": 60
+  }
+
   validates :name, presence: true
   validates :year, numericality: { only_integer: true }
   validates :rotation, inclusion: { in: rotations }
+  validates :section, inclusion: { in: sections }
 end

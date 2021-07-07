@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_163955) do
     t.integer "year"
     t.integer "class_type"
     t.integer "rotation"
+    t.integer "section"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
