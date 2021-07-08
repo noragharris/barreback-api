@@ -57,10 +57,17 @@ class Exercise < ApplicationRecord
     "Front": 20
   }, _prefix: :direction
 
+  enum height: {
+    Standing: 10,
+    Mid: 20,
+    Floor: 30
+  }
+
   validates :name, presence: true
   validates :year, numericality: { only_integer: true }
   validates :rotation, inclusion: { in: rotations }
   validates :section, inclusion: { in: sections }
   validates :location, inclusion: { in: locations }
   validates :direction, inclusion: { in: directions }
+  validates :height, inclusion: { in: heights }
 end

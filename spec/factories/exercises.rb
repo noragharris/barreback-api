@@ -8,5 +8,6 @@ FactoryBot.define do
     section { Exercise.sections.flatten.sample }
     location { Exercise.locations.flatten.sample }
     direction { Exercise.directions.flatten.sample }
+    height { Exercise.heights.flatten.sample }
   end
 end

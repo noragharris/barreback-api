@@ -10,4 +10,5 @@ RSpec.describe Exercise, type: :model do
   it { should define_enum_for(:section).with_values(Exercise.sections) }
   it { should define_enum_for(:location).with_values(Exercise.locations) }
   it { should define_enum_for(:direction).with_values(Exercise.directions).with_prefix(:direction) }
+  it { should define_enum_for(:height).with_values(Exercise.heights) }
 end
