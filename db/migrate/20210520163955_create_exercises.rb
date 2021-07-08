@@ -11,6 +11,7 @@ class CreateExercises < ActiveRecord::Migration[6.1]
       t.integer :direction
       t.integer :height
       t.boolean :pull_off, default: false
+      t.boolean :two_sided, default: false
 
       t.timestamps
     end

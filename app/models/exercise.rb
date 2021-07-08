@@ -21,13 +21,14 @@
 # Name, equipment
 #
 # TODO attributes
-# active, equipment, twoSided, setUp, choreography
+# active, equipment, setUp, choreography
 
 class Exercise < ApplicationRecord
   include Quarter
   include ClassType
 
   before_create { self.pull_off = pull_off }
+  before_create { self.two_sided = two_sided }
 
   enum rotation: {
     Turnout: 1,
