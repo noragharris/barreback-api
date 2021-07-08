@@ -27,6 +27,8 @@ class Exercise < ApplicationRecord
   include Quarter
   include ClassType
 
+  has_and_belongs_to_many :equipment_items
+
   before_create { self.pull_off = pull_off }
   before_create { self.two_sided = two_sided }
   before_create { self.active = active }

@@ -89,4 +89,7 @@ RSpec.describe '/exercises', type: :request do
       end
     end
   end
+
+  # TODO: PUT
+  # TODO DELETE
 end

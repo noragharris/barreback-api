@@ -4,24 +4,24 @@ class ExercisesController < ApplicationController
   # GET /exercises
   def index
     @exercises = Exercise.all
-    json_response(@exercises)
+    render json: @exercises, include: [:equipment_items]
   end
 
   # GET /exercises/:id
   def show
-    json_response(@exercise)
+    render json: @exercise, include: [:equipment_items]
   end
 
   # POST /exercises
   def create
     @exercise = Exercise.create!(exercise_params)
-    json_response(@exercise, :created)
+    render json: @exercise, include: [:equipment_items], status: :created
   end
 
   # PUT /exercises/:id
   def update
     @exercise.update(exercise_params)
-    json_response(@exercise)
+    render json: @exercise, include: [:equipment_items]
   end
 
   # DELETE /exercises/:id
@@ -53,6 +53,7 @@ class ExercisesController < ApplicationController
       :active,
       :set_up,
       :choreography
+      equipment_item_ids: []
     )
   end
 end
