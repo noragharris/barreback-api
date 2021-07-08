@@ -4,7 +4,7 @@ RSpec.describe Exercise, type: :model do
   it_behaves_like 'quarter'
   it_behaves_like 'class_type'
 
-  it { should have_many :equipment_items }
+  it { should have_and_belong_to_many :equipment_items }
 
   it { should validate_presence_of(:name) }
   it { should validate_numericality_of(:year) }

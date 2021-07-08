@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_07_08_034409) do
   create_table "equipment_items_exercises", id: false, force: :cascade do |t|
     t.integer "exercise_id"
     t.integer "equipment_item_id"
+    t.index ["equipment_item_id"], name: "index_equipment_items_exercises_on_equipment_item_id"
+    t.index ["exercise_id"], name: "index_equipment_items_exercises_on_exercise_id"
   end
 
   create_table "exercises", force: :cascade do |t|
