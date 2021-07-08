@@ -21,7 +21,7 @@
 # Name, section, location, direction, equipment, rotation, height
 #
 # TODO attributes
-# active, section, location, direction, equipment, height, pullOff, twoSided, setUp, choreography
+# active, location, direction, equipment, height, pullOff, twoSided, setUp, choreography
 
 class Exercise < ApplicationRecord
   include Quarter
@@ -42,6 +42,11 @@ class Exercise < ApplicationRecord
     "Abs 3": 43,
     "Back Extension": 50,
     "Back Dancing": 60
+  }
+
+  enum location: {
+    Center: 1,
+    Barre: 2
   }
 
   validates :name, presence: true

@@ -6,5 +6,6 @@ FactoryBot.define do
     class_type { Exercise.class_types.flatten.sample }
     rotation { Exercise.rotations.flatten.sample }
     section { Exercise.sections.flatten.sample }
+    location { Exercise.locations.flatten.sample }
   end
 end
