@@ -52,7 +52,7 @@ class ExercisesController < ApplicationController
       :two_sided,
       :active,
       :set_up,
-      :choreography
+      :choreography,
       equipment_item_ids: []
     )
   end
