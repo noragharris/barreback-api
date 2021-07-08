@@ -18,10 +18,7 @@
 # - choreography - String - full choreography of exercise
 #
 # TODO enums
-# Name, equipment
-#
-# TODO attributes
-# equipment
+# Name
 
 class Exercise < ApplicationRecord
   include Quarter
