@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_163955) do
     t.integer "height"
     t.boolean "pull_off", default: false
     t.boolean "two_sided", default: false
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

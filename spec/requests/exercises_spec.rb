@@ -67,6 +67,7 @@ RSpec.describe '/exercises', type: :request do
         enum_validator(Exercise.heights, valid_attributes[:height], json['height'])
         expect(json['pull_off']).to eq(valid_attributes[:pull_off])
         expect(json['two_sided']).to eq(valid_attributes[:two_sided])
+        expect(json['active']).to eq(valid_attributes[:active])
       end
 
       it 'returns status code 201' do

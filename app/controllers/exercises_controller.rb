@@ -49,7 +49,8 @@ class ExercisesController < ApplicationController
       :direction,
       :height,
       :pull_off,
-      :two_sided
+      :two_sided,
+      :active
     )
   end
 end

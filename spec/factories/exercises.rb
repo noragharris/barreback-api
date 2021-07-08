@@ -11,5 +11,6 @@ FactoryBot.define do
     height { Exercise.heights.flatten.sample }
     pull_off { Faker::Boolean.boolean }
     two_sided { Faker::Boolean.boolean }
+    active { Faker::Boolean.boolean }
   end
 end
