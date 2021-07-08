@@ -18,10 +18,10 @@
 # - choreography - String - full choreography of exercise
 #
 # TODO enums
-# Name, section, location, direction, equipment, rotation, height
+# Name, equipment, height
 #
 # TODO attributes
-# active, location, direction, equipment, height, pullOff, twoSided, setUp, choreography
+# active, equipment, height, pullOff, twoSided, setUp, choreography
 
 class Exercise < ApplicationRecord
   include Quarter
@@ -49,8 +49,18 @@ class Exercise < ApplicationRecord
     Barre: 2
   }
 
+  enum direction: {
+    "Barre": 10,
+    "Right Profile": 12,
+    "Left Profile": 13,
+    "Center": 15,
+    "Front": 20
+  }, _prefix: :direction
+
   validates :name, presence: true
   validates :year, numericality: { only_integer: true }
   validates :rotation, inclusion: { in: rotations }
   validates :section, inclusion: { in: sections }
+  validates :location, inclusion: { in: locations }
+  validates :direction, inclusion: { in: directions }
 end

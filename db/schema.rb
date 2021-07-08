@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_163955) do
     t.integer "rotation"
     t.integer "section"
     t.integer "location"
+    t.integer "direction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

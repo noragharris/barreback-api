@@ -7,5 +7,6 @@ FactoryBot.define do
     rotation { Exercise.rotations.flatten.sample }
     section { Exercise.sections.flatten.sample }
     location { Exercise.locations.flatten.sample }
+    direction { Exercise.directions.flatten.sample }
   end
 end

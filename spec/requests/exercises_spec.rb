@@ -63,6 +63,7 @@ RSpec.describe '/exercises', type: :request do
         enum_validator(Exercise.rotations, valid_attributes[:rotation], json['rotation'])
         enum_validator(Exercise.sections, valid_attributes[:section], json['section'])
         enum_validator(Exercise.locations, valid_attributes[:location], json['location'])
+        enum_validator(Exercise.directions, valid_attributes[:direction], json['direction'])
       end
 
       it 'returns status code 201' do
