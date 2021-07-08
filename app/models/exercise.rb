@@ -21,7 +21,7 @@
 # Name, equipment
 #
 # TODO attributes
-# equipment, setUp, choreography
+# equipment, choreography
 
 class Exercise < ApplicationRecord
   include Quarter
