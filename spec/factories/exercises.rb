@@ -9,5 +9,6 @@ FactoryBot.define do
     location { Exercise.locations.flatten.sample }
     direction { Exercise.directions.flatten.sample }
     height { Exercise.heights.flatten.sample }
+    pull_off { Faker::Boolean.boolean }
   end
 end

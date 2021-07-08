@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_163955) do
     t.integer "location"
     t.integer "direction"
     t.integer "height"
+    t.boolean "pull_off", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

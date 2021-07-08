@@ -18,14 +18,16 @@
 # - choreography - String - full choreography of exercise
 #
 # TODO enums
-# Name, equipment, height
+# Name, equipment
 #
 # TODO attributes
-# active, equipment, height, pullOff, twoSided, setUp, choreography
+# active, equipment, twoSided, setUp, choreography
 
 class Exercise < ApplicationRecord
   include Quarter
   include ClassType
+
+  before_create { self.pull_off = pull_off }
 
   enum rotation: {
     Turnout: 1,

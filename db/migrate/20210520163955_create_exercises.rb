@@ -10,6 +10,7 @@ class CreateExercises < ActiveRecord::Migration[6.1]
       t.integer :location
       t.integer :direction
       t.integer :height
+      t.boolean :pull_off, default: false
 
       t.timestamps
     end
