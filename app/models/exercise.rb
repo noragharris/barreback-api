@@ -21,7 +21,7 @@
 # Name, equipment
 #
 # TODO attributes
-# equipment, choreography
+# equipment
 
 class Exercise < ApplicationRecord
   include Quarter
@@ -74,4 +74,5 @@ class Exercise < ApplicationRecord
   validates :location, inclusion: { in: locations }
   validates :direction, inclusion: { in: directions }
   validates :height, inclusion: { in: heights }
+  validates :choreography, presence: true
 end

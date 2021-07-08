@@ -51,7 +51,8 @@ class ExercisesController < ApplicationController
       :pull_off,
       :two_sided,
       :active,
-      :set_up
+      :set_up,
+      :choreography
     )
   end
 end
