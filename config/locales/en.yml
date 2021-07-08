@@ -33,6 +33,23 @@ en:
   hello: "Hello world"
   faker:
     name:
+      equipment:
+        - Ball
+        - Double Tube
+        - Weights
+        - One Weight
+        - Sliders
+        - One Slider
+        - Bottom Tubes
+        - Right Bottom Tube
+        - Left Bottom Tube
+        - Top Tubes
+        - Right Top Tube
+        - Left Top Tube
+        - Platform
+        - Mat
+        - Wrist Weights
+        - Ankle Weights
       quarter:
         - Q1
         - Q2
