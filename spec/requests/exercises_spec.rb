@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe '/exercises', type: :request do
@@ -50,14 +52,25 @@ RSpec.describe '/exercises', type: :request do
   end
 
   describe 'POST /exercises' do
-    let(:exercise_name) { Faker::Name.thighs_turnout }
-    let(:valid_attributes) { { name: exercise_name } }
+    let(:valid_attributes) { attributes_for(:exercise) }
 
     context 'when the request is valid' do
-      before { post '/exercises', params: valid_attributes }
+      before { post '/exercises', params: valid_attributes, as: :json }
 
       it 'creates a exercise' do
-        expect(json['name']).to eq(exercise_name)
+        expect(json['name']).to eq(valid_attributes[:name])
+        expect(json['year']).to eq(valid_attributes[:year])
+        enum_validator(Exercise.quarters, valid_attributes[:quarter], json['quarter'])
+        enum_validator(Exercise.class_types, valid_attributes[:class_type], json['class_type'])
+        enum_validator(Exercise.rotations, valid_attributes[:rotation], json['rotation'])
+        enum_validator(Exercise.sections, valid_attributes[:section], json['section'])
+        enum_validator(Exercise.locations, valid_attributes[:location], json['location'])
+        enum_validator(Exercise.directions, valid_attributes[:direction], json['direction'])
+        enum_validator(Exercise.heights, valid_attributes[:height], json['height'])
+        expect(json['pull_off']).to eq(valid_attributes[:pull_off])
+        expect(json['two_sided']).to eq(valid_attributes[:two_sided])
+        expect(json['active']).to eq(valid_attributes[:active])
+        expect(json['choreography']).to eq(valid_attributes[:choreography])
       end
 
       it 'returns status code 201' do
@@ -73,9 +86,11 @@ RSpec.describe '/exercises', type: :request do
       end
 
       it 'returns a validation failure message' do
-        expect(response.body)
-          .to match(/Validation failed: Name can't be blank/)
+        expect(response.body).to include('Validation failed')
       end
     end
   end
+
+  # TODO: PUT
+  # TODO DELETE
 end

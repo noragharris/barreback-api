@@ -1,27 +1,29 @@
+# frozen_string_literal: true
+
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: %i[show update destroy]
 
   # GET /exercises
   def index
     @exercises = Exercise.all
-    json_response(@exercises)
+    render json: @exercises, include: [:equipment_items]
   end
 
   # GET /exercises/:id
   def show
-    json_response(@exercise)
+    render json: @exercise, include: [:equipment_items]
   end
 
   # POST /exercises
   def create
     @exercise = Exercise.create!(exercise_params)
-    json_response(@exercise, :created)
+    render json: @exercise, include: [:equipment_items], status: :created
   end
 
   # PUT /exercises/:id
   def update
     @exercise.update(exercise_params)
-    json_response(@exercise)
+    render json: @exercise, include: [:equipment_items]
   end
 
   # DELETE /exercises/:id
@@ -38,6 +40,21 @@ class ExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exercise_params
-    params.permit(:name)
+    params.permit(
+      :name,
+      :quarter,
+      :year,
+      :class_type,
+      :rotation,
+      :section,
+      :location,
+      :direction,
+      :height,
+      :pull_off,
+      :two_sided,
+      :active,
+      :choreography,
+      equipment_item_ids: []
+    )
   end
 end

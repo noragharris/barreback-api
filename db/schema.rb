@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_163955) do
+ActiveRecord::Schema.define(version: 2021_07_08_034409) do
+
+  create_table "equipment_items", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "equipment_items_exercises", id: false, force: :cascade do |t|
+    t.integer "exercise_id"
+    t.integer "equipment_item_id"
+    t.index ["equipment_item_id"], name: "index_equipment_items_exercises_on_equipment_item_id"
+    t.index ["exercise_id"], name: "index_equipment_items_exercises_on_exercise_id"
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.string "name"
+    t.integer "quarter"
+    t.integer "year"
+    t.integer "class_type"
+    t.integer "rotation"
+    t.integer "section"
+    t.integer "location"
+    t.integer "direction"
+    t.integer "height"
+    t.boolean "pull_off", default: false
+    t.boolean "two_sided", default: false
+    t.boolean "active", default: true
+    t.text "choreography"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
