@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Quarter
   extend ActiveSupport::Concern
   include ActiveModel::Validations

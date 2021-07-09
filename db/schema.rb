@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2021_07_08_034409) do
     t.boolean "pull_off", default: false
     t.boolean "two_sided", default: false
     t.boolean "active", default: true
-    t.text "set_up"
     t.text "choreography"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

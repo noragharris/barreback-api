@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateExercises < ActiveRecord::Migration[6.1]
   def change
     create_table :exercises do |t|
@@ -13,7 +15,6 @@ class CreateExercises < ActiveRecord::Migration[6.1]
       t.boolean :pull_off, default: false
       t.boolean :two_sided, default: false
       t.boolean :active, default: true
-      t.text :set_up
       t.text :choreography
 
       t.timestamps

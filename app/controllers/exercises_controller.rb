@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: %i[show update destroy]
 
@@ -51,7 +53,6 @@ class ExercisesController < ApplicationController
       :pull_off,
       :two_sided,
       :active,
-      :set_up,
       :choreography,
       equipment_item_ids: []
     )

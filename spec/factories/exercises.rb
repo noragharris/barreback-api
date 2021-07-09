@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :exercise do
     name { Faker::Name.thighs_turnout }
@@ -12,15 +14,6 @@ FactoryBot.define do
     pull_off { Faker::Boolean.boolean }
     two_sided { Faker::Boolean.boolean }
     active { Faker::Boolean.boolean }
-    set_up { Faker::Lorem.sentence(word_count: 6) }
-    choreography do
-      "Down 3up 1 –4x / 4 8s \n
-      R arm up, sidebendL liftup –8x / 4 8s \n
-      Hold sidebend, one pulse one pressback –8x / 4 8s \n
-      Come center, switch arms, L arm up, sidebendR liftup –8x / 4 8s \n
-      Hold sidebend, one pulse one pressback –8x / 4 8s \n
-      Come center, option both arms up, down 3 up 1 –4x / 4 8s \n
-      Pressback tempo –10xf"
-    end
+    choreography { Faker::Lorem.paragraphs.first }
   end
 end

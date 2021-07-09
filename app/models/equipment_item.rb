@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Ball, Double Tube, Weights, Sliders, Bottom Tubes, Top Tubes, Platform, Mat
 
 class EquipmentItem < ApplicationRecord

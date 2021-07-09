@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EquipmentItemsController < ApplicationController
   before_action :set_equipment_item, only: %i[show update destroy]
 

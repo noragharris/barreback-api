@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # An Excercise is the core building block of a class
 #
 # Exercise Attributes
@@ -14,7 +16,6 @@
 # - height - String - which height the exercise is done at
 # - pullOff - Boolean - whether the exercise is considered pulling off of the barre
 # - twoSided - Boolean - whether the exercise is done on 2 sides (mostly for Thighs)
-# - setUp - String - Set up instructions
 # - choreography - String - full choreography of exercise
 #
 # TODO enums
@@ -40,11 +41,12 @@ class Exercise < ApplicationRecord
     "Weight Work": 15,
     "Thighs": 20,
     "Seat": 30,
-    "Abs 1": 40,
-    "Abs 2": 42,
-    "Abs 3": 43,
-    "Back Extension": 50,
-    "Back Dancing": 60
+    "Core Focus": 40,
+    "Abs 1": 50,
+    "Abs 2": 52,
+    "Abs 3": 53,
+    "Back Extension": 60,
+    "Back Dancing": 70
   }
 
   enum location: {
@@ -56,6 +58,7 @@ class Exercise < ApplicationRecord
     "Barre": 10,
     "Right Profile": 12,
     "Left Profile": 13,
+    "Profile": 14,
     "Center": 15,
     "Front": 20
   }, _prefix: :direction
@@ -68,10 +71,10 @@ class Exercise < ApplicationRecord
 
   validates :name, presence: true
   validates :year, numericality: { only_integer: true }
-  validates :rotation, inclusion: { in: rotations }
+  validates :rotation, inclusion: { in: rotations }, unless: -> { rotation.blank? }
   validates :section, inclusion: { in: sections }
-  validates :location, inclusion: { in: locations }
-  validates :direction, inclusion: { in: directions }
-  validates :height, inclusion: { in: heights }
+  validates :location, inclusion: { in: locations }, unless: -> { location.blank? }
+  validates :direction, inclusion: { in: directions }, unless: -> { direction.blank? }
+  validates :height, inclusion: { in: heights }, unless: -> { height.blank? }
   validates :choreography, presence: true
 end
