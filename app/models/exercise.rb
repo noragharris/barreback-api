@@ -26,6 +26,8 @@ class Exercise < ApplicationRecord
   include ClassType
 
   has_and_belongs_to_many :equipment_items
+  has_many :barre_class_exercises
+  has_many :barre_classes, through: :barre_class_exercises
 
   before_create { self.pull_off = pull_off }
   before_create { self.two_sided = two_sided }
