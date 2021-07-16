@@ -57,6 +57,7 @@ RSpec.describe 'BarreClasses', type: :request do
 
       it 'creates a exercise' do
         expect(json['location']).to eq(valid_attributes[:location])
+        expect(json['class_type']).to eq(valid_attributes[:class_type])
       end
 
       it 'returns status code 201' do

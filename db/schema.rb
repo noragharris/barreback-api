@@ -21,20 +21,9 @@ ActiveRecord::Schema.define(version: 2021_07_15_192628) do
 
   create_table "barre_classes", force: :cascade do |t|
     t.string "location"
+    t.integer "class_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "classic_classes", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "classic_classes_exercises", id: false, force: :cascade do |t|
-    t.integer "classic_class_id"
-    t.integer "exercise_id"
-    t.index ["classic_class_id"], name: "index_classic_classes_exercises_on_classic_class_id"
-    t.index ["exercise_id"], name: "index_classic_classes_exercises_on_exercise_id"
   end
 
   create_table "equipment_items", force: :cascade do |t|
