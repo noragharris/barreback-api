@@ -6,6 +6,9 @@ class ExercisesController < ApplicationController
   # GET /exercises
   def index
     @exercises = Exercise.all
+    @exercises = @exercises.filter_by_section(params[:section]) if params[:section].present?
+    @exercises = @exercises.filter_by_rotation(params[:rotation]) if params[:rotation].present?
+    @exercises = @exercises.filter_by_class_type(params[:class_type]) if params[:class_type].present?
     render json: @exercises, include: [:equipment_items]
   end
 

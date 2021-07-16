@@ -79,4 +79,9 @@ class Exercise < ApplicationRecord
   validates :direction, inclusion: { in: directions }, unless: -> { direction.blank? }
   validates :height, inclusion: { in: heights }, unless: -> { height.blank? }
   validates :choreography, presence: true
+
+  scope :filter_by_section, ->(section) { where section: section }
+  scope :filter_by_rotation, ->(rotation) { where rotation: rotation }
+  scope :filter_by_class_type, ->(class_type) { where class_type: class_type }
+  # TODO FILTER BY EQUIPMENT
 end
