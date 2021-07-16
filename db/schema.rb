@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_08_034409) do
+ActiveRecord::Schema.define(version: 2021_07_15_192628) do
+
+  create_table "barre_class_exercises", force: :cascade do |t|
+    t.integer "exercise_id"
+    t.integer "barre_class_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "barre_classes", force: :cascade do |t|
+    t.string "location"
+    t.integer "class_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "equipment_items", force: :cascade do |t|
     t.string "name"

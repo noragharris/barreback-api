@@ -7,6 +7,8 @@ RSpec.describe Exercise, type: :model do
   it_behaves_like 'class_type'
 
   it { should have_and_belong_to_many :equipment_items }
+  it { should have_many :barre_classes }
+  it { should have_many :barre_class_exercises }
 
   it { should validate_presence_of(:name) }
   it { should validate_numericality_of(:year) }

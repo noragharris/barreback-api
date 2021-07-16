@@ -26,6 +26,8 @@ class Exercise < ApplicationRecord
   include ClassType
 
   has_and_belongs_to_many :equipment_items
+  has_many :barre_class_exercises
+  has_many :barre_classes, through: :barre_class_exercises
 
   before_create { self.pull_off = pull_off }
   before_create { self.two_sided = two_sided }
@@ -77,4 +79,9 @@ class Exercise < ApplicationRecord
   validates :direction, inclusion: { in: directions }, unless: -> { direction.blank? }
   validates :height, inclusion: { in: heights }, unless: -> { height.blank? }
   validates :choreography, presence: true
+
+  scope :filter_by_section, ->(section) { where section: section }
+  scope :filter_by_rotation, ->(rotation) { where rotation: rotation }
+  scope :filter_by_class_type, ->(class_type) { where class_type: class_type }
+  # TODO FILTER BY EQUIPMENT
 end
